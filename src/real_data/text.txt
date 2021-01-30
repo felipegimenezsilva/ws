@@ -1,105 +1,59 @@
 # Saalve man, criei essa "mini linguagem" para ficar mais tranquilo de realizar
 # a criação do database com dados reais do neo4j
-
 # para gerar as queries(.txt) de criação do banco utilize (comando linux)
 # python3 parser.py < text.txt > queries.txt
-
 # para executar as queries(.txt) utilize
 # python3 execute_file < queries.txt
 
 ::Disease | Name | Description
 
-"gripe"			| "desc"
-"alergia"		| "desc"
-"amigdalite"	| "desc"
-"pneumonia"		| "desc"
-"asma"			| "desc"
-"otite"			| "desc"
-"bronquite"		| "desc"
-"sinusite"		| "desc"
+"gripe"				| "descrição de gripe"
+"rinite alérgica"	| "inflamação da mucosa que reveste o nariz"
+"sinusite"			| "inflamação da mucosa dos seios da face"
+"pneumonia"			| "inflamação de vias respiratórias"
 
 ::Symptom | Name | Description
 
-"calafrios"						| "desc"
-"cansaço excessivo"				| "desc"
-"chiado no peito"				| "desc"
-"congestão nasal"				| "desc"
-"dificuldade para respirar"		| "desc"
-"diminuição da audição"			| "desc"
-"dor de cabeça"					| "desc"
-"dor de garganta"				| "desc"
-"dores no corpo"				| "desc"
-"dores no peito"				| "desc"
-"dor no ouvido"					| "desc"
-"espirros"						| "desc"
-"fadiga"						| "desc"
-"falta de ar"					| "desc"
-"febre"							| "desc"
-"fraqueza"						| "desc"
-"gânglios linfáticos inchados"	| "desc"
-"manchas de pus nas amígdalas"	| "desc"
-"mau hálito"					| "desc"
-"náusea"						| "desc"
-"vômitos"						| "desc"
-"perda de apetite"				| "desc"
-"secreção nasal"				| "desc"
-"secreções no ouvido"			| "desc"
-"tosse seca"					| "desc"
-"tosse com catarro"				| "desc"
-"tosse com muco"				| "desc"
-"tosse com sangue"				| "desc"
+"dor de cabeça"					| "dores fortes na cabeça"
+"corrimento nasal"				| "coriza"
+"arrepios"						| "arrepios comuns"
+"dor muscular"					| "dores musculares sem estímulo físico"
+"cansaço"						| "cansaço incomum sem atividade física"
+"febre"							| "temperatura corporal em cerca de 38"
+"espirros"						| "espirros constantes"
+"coceira no nariz"				| "coceira"
+"temperatura baixa"				| "clima frio"
+"ar seco"						| "ar seco"
+"ambientes fechados"			| "persistência em ambientes fechados"
+"tosse com catarro" 			| "tosse com catarro amarelo ou esverdeado"
+"calafrio"						| "calafrios repentinos"
+"falta de ar"					| "dificuldades em respirar"
+"respiração ofegante"			| "respiração acelerada"
 
 ::Question | Name | Description | DueAnswer | MetaAnswer
 	
-"calafrios"						| "desc" | duration({days:3}) | '{json}'
-"cansaço excessivo"				| "desc" | duration({days:3}) | '{json}'
-"chiado no peito"				| "desc" | duration({days:3}) | '{json}'
-"congestão nasal"				| "desc" | duration({days:3}) | '{json}'
-"dificuldade para respirar"		| "desc" | duration({days:3}) | '{json}'
-"diminuição da audição"			| "desc" | duration({days:3}) | '{json}'
-"dor de cabeça"					| "desc" | duration({days:3}) | '{json}'
-"dor de garganta"				| "desc" | duration({days:3}) | '{json}'
-"dores no corpo"				| "desc" | duration({days:3}) | '{json}'
-"dores no peito"				| "desc" | duration({days:3}) | '{json}'
-"dor no ouvido"					| "desc" | duration({days:3}) | '{json}'
-"espirros"						| "desc" | duration({days:3}) | '{json}'
-"fadiga"						| "desc" | duration({days:3}) | '{json}'
-"falta de ar"					| "desc" | duration({days:3}) | '{json}'
-"febre"							| "desc" | duration({days:3}) | '{json}'
-"fraqueza"						| "desc" | duration({days:3}) | '{json}'
-"gânglios linfáticos inchados"	| "desc" | duration({days:3}) | '{json}'
-"manchas de pus nas amígdalas"	| "desc" | duration({days:3}) | '{json}'
-"mau hálito"					| "desc" | duration({days:3}) | '{json}'
-"náusea"						| "desc" | duration({days:3}) | '{json}'
-"vômitos"						| "desc" | duration({days:3}) | '{json}'
-"perda de apetite"				| "desc" | duration({days:3}) | '{json}'
-"secreção nasal"				| "desc" | duration({days:3}) | '{json}'
-"secreções no ouvido"			| "desc" | duration({days:3}) | '{json}'
-"tosse seca"					| "desc" | duration({days:3}) | '{json}'
-"tosse com catarro"				| "desc" | duration({days:3}) | '{json}'
-"tosse com muco"				| "desc" | duration({days:3}) | '{json}'
-"tosse com sangue"				| "desc" | duration({days:3}) | '{json}'
+"dor de cabeça"			| "você tem sentido dores fortes na cabeça?"				| duration({days:3}) | '{json}'
+"corrimento nasal"		| "tem ocorrido escorrimento nasal?"						| duration({days:3}) | '{json}'
+"arrepios"				| "tem sentido arrepios constantes?"						| duration({days:3}) | '{json}'
+"dor muscular"			| "tem sentido dores musculares sem estímulo físico?"		| duration({days:3}) | '{json}'
+"cansaço"				| "sentiu cansaço incomum sem realizaratividade física?"	| duration({days:3}) | '{json}'
+"febre"					| "a temperatura corporal está fora do normal?				| duration({days:3}) | '{json}'
+"espirros"				| "tem ocorrido espirros constantes?" 						| duration({days:3}) | '{json}'
+"coceira no nariz"		| "tem sentido coceira no nariz?" 							| duration({days:3}) | '{json}'
+"temperatura baixa"		| "houve queda de temperatura?" 							| duration({days:3}) | '{json}'
+"ar seco"				| "o ar está aparentemente seco?" 							| duration({days:3}) | '{json}'
+"ambientes fechados"	| "Você permanece por grande tempo em ambientes fechados?"	| duration({days:3}) | '{json}'
+"tosse com catarro" 	| "ocorre tosse com catarro amarelo ou esverdeado?"			| duration({days:3}) | '{json}'
+"calafrio"				| "sente calafrios repentinos?"								| duration({days:3}) | '{json}'
+"falta de ar"			| "possui dificuldades em respirar?"						| duration({days:3}) | '{json}'
+"respiração ofegante"	| "está com a respiração ofegante e acelerada?"				| duration({days:3}) | '{json}'
 
 # questoes relacionadas a informações de uma pessoa
-"info 0"	| "voecê é info 0" | duration({days:3}) | '{json}'
-"info 1"	| "info 1" | duration({days:3}) | '{json}'
-"info 2"	| "info 2" | duration({days:3}) | '{json}'
-"info 3"	| "info 3" | duration({days:3}) | '{json}'
-"info 4"	| "info 4" | duration({days:3}) | '{json}'
-"info 5"	| "info 5" | duration({days:3}) | '{json}'
-"info 6"	| "info 6" | duration({days:3}) | '{json}'
-"info 7"	| "info 7" | duration({days:3}) | '{json}'
-"info 8"	| "info 8" | duration({days:3}) | '{json}'
-"info 9"	| "info 9" | duration({days:3}) | '{json}'
-
+"info 0"	| "você é info 0" 	| duration({days:3}) | '{json}'
+"info 1"	| "info 1" 			| duration({days:3}) | '{json}'
 
 ::Person | Name
 
-"ana"
-"paula"
-"pedro"
-"joão"
-"lucas"
 "felipe"
 
 ::Location | Name | latitude | longitude
@@ -109,7 +63,23 @@
 
 ->HAS | Disease | Symptom | minValue | maxValue 
 
-"gripe"	| "febre" | 0.3 | 0.5
+"gripe"				| "dor de cabeça"	 	| 0.5 | 1
+"gripe"				| "corrimento nasal" 	| 0.2 | 1
+"gripe"				| "arrepios"		 	| 0.3 | 1
+"gripe"				| "dor muscular"	 	| 0.3 | 1
+"gripe"				| "cansaço"			 	| 0.3 | 1
+"gripe"				| "febre"			 	| 0.3 | 1
+"rinite alérgica" 	| "espirros"			| 0.3 | 1
+"rinite alérgica" 	| "corrimento nasal" 	| 0.2 | 1
+"rinite alérgica" 	| "coceira no nariz" 	| 0.2 | 1
+"sinusite"			| "ar seco" 			| 0.2 | 1
+"sinusite"			| "temperatura baixa" 	| 0.2 | 1
+"sinusite"			| "ambientes fechados" 	| 0.2 | 1
+"pneumonia" 		| "febre" 				| 0.2 | 0.6
+"pneumonia" 		| "tosse com catarro" 	| 0.2 | 1
+"pneumonia" 		| "calafrio" 			| 0.2 | 1
+"pneumonia" 		| "falta de ar" 		| 0.2 | 1
+"pneumonia" 		| "respiração ofegante" | 0.2 | 1
 
 ->REQUIRE | Disease | Question | minValue | maxValue 
 
@@ -117,43 +87,18 @@
 
 ->ASK | Symptom | Question
 
-"calafrios"						| "calafrios" 
-"cansaço excessivo"				| "cansaço excessivo"
-"chiado no peito"				| "chiado no peito"
-"congestão nasal"				| "congestão nasal"
-"dificuldade para respirar"		| "dificuldade para respirar"
-"diminuição da audição"			| "diminuição da audição"
 "dor de cabeça"					| "dor de cabeça"
-"dor de garganta"				| "dor de garganta"
-"dores no corpo"				| "dores no corpo"
-"dores no peito"				| "dores no peito"
-"dor no ouvido"					| "dor no ouvido"
-"espirros"						| "espirros"
-"fadiga"						| "fadiga"
-"falta de ar"					| "falta de ar"
+"corrimento nasal"				| "corrimento nasal"
+"arrepios"						| "arrepios"
+"dor muscular"					| "dor muscular"
+"cançaso"						| "cançaso"
 "febre"							| "febre"
-"fraqueza"						| "fraqueza"
-"gânglios linfáticos inchados"	| "gânglios linfáticos inchados"
-"manchas de pus nas amígdalas"	| "manchas de pus nas amígdalas"
-"mau hálito"					| "mau hálito"
-"náusea"						| "náusea"
-"vômitos"						| "vômitos"
-"perda de apetite"				| "perda de apetite"
-"secreção nasal"				| "secreção nasal"
-"secreções no ouvido"			| "secreções no ouvido"
-"tosse seca"					| "tosse seca"
-"tosse com catarro"				| "tosse com catarro"
-"tosse com muco"				| "tosse com muco"
-"tosse com sangue"				| "tosse com sangue"
+"espirro"						| "espirro"
+"coceira no nariz"				| "coceira no nariz"
+"temperatura baixa"				| "temperatura baixa"
+"ar seco"						| "ar seco"
+"ambientes fechados"			| "ambientes fechados"
 
 ->INFO | Person | Question | Answer | DateTime 
-
-"felipe" | "info 0" | 0.3 | datetime("2020-01-29")
-
 ->FEEL | Person | Symptom | Answer | DateTime
-
-"felipe" | "calafrios" | 0.4 | datetime("2020-01-17")
-
 ->AT | Person | Location | DateTime
-
-"felipe" | "Bragança" | datetime("2020-01-16")
